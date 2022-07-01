@@ -19,9 +19,17 @@ const typeDefs = gql`
         bookCount: Int
         savedBooks: [Book]
     }
+    type Auth {
+        token: ID!
+        user: User
+    }
 
     type Query {
-        users: [User]
+        me: User
+    }
+
+    type Mutation {
+        addUser(username: String!, email: String!, password: String!): Auth
     }
 `;
 
