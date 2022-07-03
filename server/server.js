@@ -6,8 +6,6 @@ const { typeDefs, resolvers } = require('./schemas');
 const db = require('./config/connection');
 const { authMiddleware } = require('./utils/auth');
 
-// const routes = require('./routes');
-
 const PORT = process.env.PORT || 3001;
 const server = new ApolloServer({
   typeDefs,
@@ -28,8 +26,6 @@ app.use(express.json());
 // app.get('*', (req, res) => {
 //   res.sendFile(path.join(__dirname, '../client/build/index.html'));
 // });
-
-// app.use(routes);
 
 const startApolloServer = async (typeDefs, resolvers) => {
   await server.start();
